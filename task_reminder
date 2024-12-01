@@ -1,0 +1,14 @@
+# task_reminder.py
+
+import schedule
+import time
+
+def remind(task):
+    print(f"Reminder: {task}")
+
+schedule.every().day.at("10:00").do(remind, task="Start working on Python projects")
+
+# Running the scheduler
+while True:
+    schedule.run_pending()
+    time.sleep(1)
